@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GGR472 Lab 4</title>
+    <!--Mapbox GL JS-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css' rel='stylesheet'>
+    <!-- mapbox geocoder plugin -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css"
+        type="text/css">
     <!-- mapbox API -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css' rel='stylesheet' />
@@ -17,10 +26,64 @@
 
 <body>
 
-    <!-- MAP CONTAINER -->
-    <div id='map' class='map'></div>
+    <!-- Move the map here -->
+	<div id="my-map" class="map-container">
+		<!-- NAVIGATION ELEMENTS -->
+        <div class="map-search-container">
+            <label class="option-label" for="geocoder">Search for location</label>
+            <div id="geocoder" class="geocoder"></div>
+            <button type="button" class="btn btn-primary btn-sm" id="returnbutton">Return to full extent</button>
+        </div>
+
+        <div class="map-data-container">
+            <label class="option-label">Filter map view</label>
+    
+            <!-- Checkbox to show/hide collision points -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="collisioncheck" checked>
+                <label class="form-check-label" for="collisioncheck">Collisions</label>
+            </div>
+    
+            <!-- Checkbox to show/hide hex -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="hexcheck" checked>
+                <label class="form-check-label" for="hexcheck">Collision areas hexagons</label>
+            </div>
+    
+            <!-- Checkbox to show/hide legend -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="legendcheck" checked>
+                <label class="form-check-label" for="legendcheck">Legend</label>
+            </div>
+    
+        </div>
+
+		<!-- LEGEND -->
+		<div id='popn-legend' class='legend'> <!--id='legend'-->
+			<div align=center>
+				<h4>Transportation Stops around Toronto</h4>
+                <div>
+                    <div class="legend-key collision-point-key"></div>Collision
+                </div>
+                <div>
+                    <div class="legend-key low-dens-key"></div>Low collision density
+                </div>
+                <div>
+                    <div class="legend-key high-dens-key">
+                    </div>High collision density
+                </div>
+			</div>
+		</div>
 
     <script src="script.js"></script>
+    <!-- Load the mapbox-gl-geocoder plugin -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css"
+        type="text/css">
+    
+    </div>
 
 </body>
 

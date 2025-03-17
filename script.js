@@ -49,7 +49,7 @@ let Collisions = data;
 
 map.on('load', () => {
     // Fetch and display Collisions data
-    fetch('https://raw.githubusercontent.com/Typholison-byte/GGR472-Lab-4/main/data/pedcyc_collision_06-21.geojson')
+    fetch('https://raw.githubusercontent.com/Typholison-byte/GGR472-Lab-4/refs/heads/main/data/pedcyc_collision_06-21.geojson')
         .then(response => response.json())
         .then(data => {
             console.log("Collision Data:", data);

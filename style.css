@@ -5,6 +5,17 @@
     width: 100%;
 }
 
+/* Style data container */
+.map-data-container {
+    position: absolute; 
+    bottom: 90px;  /* Adjust based on layout */
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Make it visible */
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
 /* Style search container */
 .map-search-container {
     position: absolute;
@@ -17,13 +28,14 @@
     overflow: visible;
 }
 
+/* Style geocoder */
 .geocoder {
     position: relative;
     margin: 10px 9px;
 }
 
 /* Adjust headings styles */
-h3 {
+h4 {
     color: orange;
 }
 
@@ -36,76 +48,76 @@ body {
     color: green;
     margin: 10px;
     padding: 0;
-
 } 
+
+/* Style the label for the filters */
+.option-label {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: block;
+    z-index: 1000;
+}
+
+/* Style the checkboxes */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    z-index: 1000;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.form-check-label {
+    font-size: 13px;
+    z-index: 1000;
+}
 
 /* Styling Legend */
 .legend {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.7);
-    bottom: 80px;
-    right: 1px;
-    margin: 0px 15px 0px 0px;
-    /*top margin, right margin, bottom margin, left margin*/
+    bottom: 120px;
+    right: 20px;
+    margin: 0px 0px 0px 0px;
     padding: 10px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .legend span {
     display: inline-block;
     border-radius: 50%;
-    /*curve border to make a circle*/
     height: 10px;
-    /*size of circle*/
     width: 10px;
     margin-right: 5px;
-    /*position of circle*/
+
+    z-index: 1000;
 }
 
-/* Add colour to each child div in legend */
-.legend div:nth-child(2) span {
-    background-color: green;
-}
-
-.legend div:nth-child(3) span {
-    background-color: turquoise;
-}
-
-
-/* Style for the legend buttons */
-.legend button {
+#returnbutton {
     display: block;
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.3s, background-color 0.3s;
-}
-
-/* Color for each button */
-.legend button:nth-child(1) { background-color: green; color: white; }
-.legend button:nth-child(2) { background-color: blue; color: white; }
-
-/* Hover effects */
-.legend button:hover {
-    opacity: 0.8;
-}
-
-/* Disabled (hidden) state */
-.legend button.hidden {
-    opacity: 0.5;
-    background-color: gray;
+    position: absolute;
+    top: 42px;
+    left: 280px;
+    width: 95%;
+    z-index: 1000;
 }
 
 /* Show/Hide legend smoothly */
 .hidden {
     display: none;
+}
+
+form {
+    padding-bottom: 20px;
 }
 
